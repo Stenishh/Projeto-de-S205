@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "tipo": "notificacao",
+    "icone": "notifications_active",
+    "mensagem": "Você possui um armário reservado com entrega para hoje...",
+    "data": "10/11/2025",
+    "lida": false
+  },
+  {
+    "id": 2,
+    "tipo": "alerta",
+    "icone": "mail",
+    "mensagem": "Você possui uma pendência no financeiro...",
+    "data": "09/11/2025",
+    "lida": false
+  },
+  {
+    "id": 3,
+    "tipo": "prova",
+    "icone": "school",
+    "mensagem": "Prova de Física II amanhã às 08:00 na sala P1-S08",
+    "data": "10/11/2025",
+    "lida": false
+  },
+  {
+    "id": 4,
+    "tipo": "aviso",
+    "icone": "info",
+    "mensagem": "Período de matrícula para 2025.1 abre na próxima semana",
+    "data": "08/11/2025",
+    "lida": true
+  }
+]
