@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas - Portal Acadêmico</title>
+    <title>Vagas de Estágio - Portal Acadêmico</title>
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/notas.css">
+    <link rel="stylesheet" href="../assets/css/vagas.css">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
@@ -28,10 +28,10 @@
             <li><a href="materias.html"><span class="material-symbols-outlined">menu_book</span>Minhas Matérias</a></li>
             <li><a href="horarios.html"><span class="material-symbols-outlined">schedule</span>Horários</a></li>
             <li><a href="frequencia.html"><span class="material-symbols-outlined">fact_check</span>Frequência</a></li>
-            <li><a href="notas.html" class="active"><span class="material-symbols-outlined">grade</span>Notas</a></li>
+            <li><a href="notas.html"><span class="material-symbols-outlined">grade</span>Notas</a></li>
             <li><a href="calendario.html"><span class="material-symbols-outlined">calendar_month</span>Calendário</a></li>
             <li><a href="graficos.html"><span class="material-symbols-outlined">bar_chart</span>Gráficos</a></li>
-            <li><a href="vagas.html"><span class="material-symbols-outlined">work</span>Vagas</a></li>
+            <li><a href="vagas.html" class="active"><span class="material-symbols-outlined">work</span>Vagas</a></li>
             <li><a href="perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a></li>
         </ul>
         <div class="sidebar-footer">
@@ -46,27 +46,129 @@
     </nav>
 
     <main>
-        <div class="media-geral-destaque fade-in">
-            <h2>📊 CR Geral do Semestre</h2>
-            <div class="media-geral-valor" id="mediaGeralValor">-</div>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 30px;">
-                <div>
-                    <div style="font-size: 2rem; font-weight: 700;" id="totalAprovadas">-</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Aprovadas</div>
+        <!-- Header com Estatísticas -->
+        <div class="vagas-header fade-in">
+            <h1>💼 Vagas de Estágio</h1>
+            <p>Encontre oportunidades alinhadas ao seu perfil</p>
+            
+            <div class="vagas-stats">
+                <div class="stat-card">
+                    <span class="material-symbols-outlined">work</span>
+                    <div class="stat-info">
+                        <div class="stat-valor" id="totalVagas">-</div>
+                        <div class="stat-label">Vagas Disponíveis</div>
+                    </div>
                 </div>
-                <div>
-                    <div style="font-size: 2rem; font-weight: 700;" id="totalRecuperacao">-</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">NP3</div>
+                <div class="stat-card">
+                    <span class="material-symbols-outlined">send</span>
+                    <div class="stat-info">
+                        <div class="stat-valor" id="totalCandidaturas">-</div>
+                        <div class="stat-label">Candidaturas</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="material-symbols-outlined">stars</span>
+                    <div class="stat-info">
+                        <div class="stat-valor" id="vagasDestaque">-</div>
+                        <div class="stat-label">Em Destaque</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="notas-lista" id="notasContainer">
-            <!-- Notas serão carregadas aqui -->
+        <!-- Filtros -->
+        <div class="filtros-container fade-in">
+            <div class="filtros-header">
+                <h2>🔍 Filtros de Busca</h2>
+                <button class="btn-limpar-filtros" id="limparFiltros">
+                    <span class="material-symbols-outlined">restart_alt</span>
+                    Limpar Filtros
+                </button>
+            </div>
+            
+            <div class="filtros-grid">
+                <div class="filtro-item">
+                    <label for="filtroArea">Área</label>
+                    <select id="filtroArea">
+                        <option value="">Todas as áreas</option>
+                        <option value="Desenvolvimento">Desenvolvimento</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="Qualidade">Qualidade</option>
+                        <option value="Design">Design</option>
+                        <option value="Dados">Dados</option>
+                        <option value="Segurança">Segurança</option>
+                    </select>
+                </div>
+                
+                <div class="filtro-item">
+                    <label for="filtroModalidade">Modalidade</label>
+                    <select id="filtroModalidade">
+                        <option value="">Todas</option>
+                        <option value="Remoto">Remoto</option>
+                        <option value="Presencial">Presencial</option>
+                        <option value="Híbrido">Híbrido</option>
+                    </select>
+                </div>
+                
+                <div class="filtro-item">
+                    <label for="filtroBolsa">Bolsa Mínima</label>
+                    <select id="filtroBolsa">
+                        <option value="0">Qualquer valor</option>
+                        <option value="1500">R$ 1.500+</option>
+                        <option value="1800">R$ 1.800+</option>
+                        <option value="2000">R$ 2.000+</option>
+                    </select>
+                </div>
+                
+                <div class="filtro-item">
+                    <label for="filtroOrdenar">Ordenar por</label>
+                    <select id="filtroOrdenar">
+                        <option value="match">Maior Match</option>
+                        <option value="recente">Mais Recente</option>
+                        <option value="bolsa">Maior Bolsa</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de Vagas -->
+        <div class="vagas-lista" id="vagasLista">
+            <!-- Vagas serão inseridas aqui pelo JavaScript -->
         </div>
     </main>
 
+    <!-- Modal de Detalhes da Vaga -->
+    <div class="modal-overlay" id="modalVaga" style="display: none;">
+        <div class="modal-vaga fade-in">
+            <div class="modal-header">
+                <button class="btn-voltar" id="voltarLista">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Voltar
+                </button>
+                <button class="btn-fechar-modal" id="fecharModal">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <div class="modal-content" id="modalContent">
+                <!-- Conteúdo será inserido aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Candidatura -->
+    <div class="modal-overlay" id="modalConfirmacao" style="display: none;">
+        <div class="modal-confirmacao fade-in">
+            <div class="confirmacao-icon">
+                <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <h2>Candidatura Enviada com Sucesso!</h2>
+            <p>Seu perfil foi enviado para a empresa. Boa sorte! 🍀</p>
+            <button class="btn-ok" id="btnOk">Entendi</button>
+        </div>
+    </div>
+
     <script src="../assets/js/global.js"></script>
-    <script src="../assets/js/notas.js"></script>
+    <script src="../assets/js/vagas.js"></script>
 </body>
 </html>

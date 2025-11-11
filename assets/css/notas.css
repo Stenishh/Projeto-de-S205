@@ -23,7 +23,8 @@
   border-top: 4px solid var(--cor-sucesso);
 }
 
-.nota-card.recuperacao {
+.nota-card.recuperacao,
+.nota-card.np3 {
   border-top: 4px solid var(--cor-alerta);
 }
 
@@ -144,7 +145,8 @@
   background-color: var(--cor-sucesso);
 }
 
-.status-aprovacao.recuperacao {
+.status-aprovacao.recuperacao,
+.status-aprovacao.np3 {
   background-color: var(--cor-alerta);
 }
 

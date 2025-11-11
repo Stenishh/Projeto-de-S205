@@ -33,7 +33,7 @@ function exibirNotas() {
                 </div>
                 <div class="cr-display" style="background: ${corCR};">
                     <div class="cr-label">CR</div>
-                    <div class="cr-valor">${nota.cr.toFixed(1)}</div>
+                    <div class="cr-valor">${nota.cr.toFixed(0)}</div>
                 </div>
             </div>
             
@@ -54,7 +54,7 @@ function exibirNotas() {
                             <td>${av.peso}</td>
                             <td>
                                 <span class="nota-valor ${getClasseNota(av.nota)}">
-                                    ${av.nota.toFixed(1)}
+                                    ${av.nota.toFixed(0)}
                                 </span>
                             </td>
                         </tr>
@@ -74,8 +74,8 @@ function exibirNotas() {
 }
 
 function getClasseNota(nota) {
-    if (nota >= 8) return 'alta';
-    if (nota >= 6) return 'media';
+    if (nota >= 80) return 'alta';
+    if (nota >= 60) return 'media';
     return 'baixa';
 }
 
@@ -83,10 +83,10 @@ function calcularMediaGeral() {
     if (!notasData || notasData.length === 0) return;
     
     const crs = notasData.map(n => n.cr);
-    const mediaGeral = (crs.reduce((a, b) => a + b, 0) / crs.length).toFixed(1);
+    const mediaGeral = (crs.reduce((a, b) => a + b, 0) / crs.length).toFixed(0);
     
     const aprovadas = notasData.filter(n => n.status === 'Aprovado').length;
-    const recuperacao = notasData.filter(n => n.status === 'Recuperação').length;
+    const recuperacao = notasData.filter(n => n.status === 'NP3').length;
     
     document.getElementById('mediaGeralValor').textContent = mediaGeral;
     document.getElementById('totalAprovadas').textContent = aprovadas;

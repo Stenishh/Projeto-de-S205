@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "vaga_id": 6,
+    "data_candidatura": "07/11/2025",
+    "status": "Em análise",
+    "status_codigo": "analise"
+  },
+  {
+    "id": 2,
+    "vaga_id": 3,
+    "data_candidatura": "09/11/2025",
+    "status": "Aguardando retorno",
+    "status_codigo": "aguardando"
+  }
+]

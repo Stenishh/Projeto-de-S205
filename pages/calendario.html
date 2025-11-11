@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas - Portal Acadêmico</title>
+    <title>Calendário Acadêmico - Portal Acadêmico</title>
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/notas.css">
+    <link rel="stylesheet" href="../assets/css/calendario.css">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
@@ -28,8 +28,8 @@
             <li><a href="materias.html"><span class="material-symbols-outlined">menu_book</span>Minhas Matérias</a></li>
             <li><a href="horarios.html"><span class="material-symbols-outlined">schedule</span>Horários</a></li>
             <li><a href="frequencia.html"><span class="material-symbols-outlined">fact_check</span>Frequência</a></li>
-            <li><a href="notas.html" class="active"><span class="material-symbols-outlined">grade</span>Notas</a></li>
-            <li><a href="calendario.html"><span class="material-symbols-outlined">calendar_month</span>Calendário</a></li>
+            <li><a href="notas.html"><span class="material-symbols-outlined">grade</span>Notas</a></li>
+            <li><a href="calendario.html" class="active"><span class="material-symbols-outlined">calendar_month</span>Calendário</a></li>
             <li><a href="graficos.html"><span class="material-symbols-outlined">bar_chart</span>Gráficos</a></li>
             <li><a href="vagas.html"><span class="material-symbols-outlined">work</span>Vagas</a></li>
             <li><a href="perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a></li>
@@ -46,27 +46,49 @@
     </nav>
 
     <main>
-        <div class="media-geral-destaque fade-in">
-            <h2>📊 CR Geral do Semestre</h2>
-            <div class="media-geral-valor" id="mediaGeralValor">-</div>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 30px;">
-                <div>
-                    <div style="font-size: 2rem; font-weight: 700;" id="totalAprovadas">-</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Aprovadas</div>
-                </div>
-                <div>
-                    <div style="font-size: 2rem; font-weight: 700;" id="totalRecuperacao">-</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">NP3</div>
-                </div>
+        <div class="calendario-header fade-in">
+            <h1>📅 Calendário Acadêmico</h1>
+            <div class="calendario-controls">
+                <button class="btn-mes" id="mesPrev">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <h2 id="mesAnoAtual">Novembro 2025</h2>
+                <button class="btn-mes" id="mesNext">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
             </div>
         </div>
 
-        <div class="notas-lista" id="notasContainer">
-            <!-- Notas serão carregadas aqui -->
+        <div class="calendario-container fade-in">
+            <div class="calendario-grid" id="calendarioGrid">
+                <!-- Dias da semana -->
+                <div class="dia-semana">Dom</div>
+                <div class="dia-semana">Seg</div>
+                <div class="dia-semana">Ter</div>
+                <div class="dia-semana">Qua</div>
+                <div class="dia-semana">Qui</div>
+                <div class="dia-semana">Sex</div>
+                <div class="dia-semana">Sáb</div>
+                <!-- Dias serão inseridos aqui pelo JavaScript -->
+            </div>
+        </div>
+
+        <div class="detalhes-dia-container" id="detalhesDiaContainer" style="display: none;">
+            <div class="detalhes-dia-card fade-in">
+                <div class="detalhes-dia-header">
+                    <h2 id="detalhesDiaTitle">Detalhes do Dia</h2>
+                    <button class="btn-fechar" id="fecharDetalhes">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div id="detalhesDiaContent">
+                    <!-- Conteúdo será inserido aqui -->
+                </div>
+            </div>
         </div>
     </main>
 
     <script src="../assets/js/global.js"></script>
-    <script src="../assets/js/notas.js"></script>
+    <script src="../assets/js/calendario.js"></script>
 </body>
 </html>

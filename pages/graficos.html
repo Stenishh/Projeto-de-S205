@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas - Portal Acadêmico</title>
+    <title>Gráficos de Desempenho - Portal Acadêmico</title>
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/notas.css">
+    <link rel="stylesheet" href="../assets/css/graficos.css">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <header>
@@ -28,9 +29,9 @@
             <li><a href="materias.html"><span class="material-symbols-outlined">menu_book</span>Minhas Matérias</a></li>
             <li><a href="horarios.html"><span class="material-symbols-outlined">schedule</span>Horários</a></li>
             <li><a href="frequencia.html"><span class="material-symbols-outlined">fact_check</span>Frequência</a></li>
-            <li><a href="notas.html" class="active"><span class="material-symbols-outlined">grade</span>Notas</a></li>
+            <li><a href="notas.html"><span class="material-symbols-outlined">grade</span>Notas</a></li>
             <li><a href="calendario.html"><span class="material-symbols-outlined">calendar_month</span>Calendário</a></li>
-            <li><a href="graficos.html"><span class="material-symbols-outlined">bar_chart</span>Gráficos</a></li>
+            <li><a href="graficos.html" class="active"><span class="material-symbols-outlined">bar_chart</span>Gráficos</a></li>
             <li><a href="vagas.html"><span class="material-symbols-outlined">work</span>Vagas</a></li>
             <li><a href="perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a></li>
         </ul>
@@ -46,27 +47,96 @@
     </nav>
 
     <main>
-        <div class="media-geral-destaque fade-in">
-            <h2>📊 CR Geral do Semestre</h2>
-            <div class="media-geral-valor" id="mediaGeralValor">-</div>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 30px;">
-                <div>
-                    <div style="font-size: 2rem; font-weight: 700;" id="totalAprovadas">-</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Aprovadas</div>
-                </div>
-                <div>
-                    <div style="font-size: 2rem; font-weight: 700;" id="totalRecuperacao">-</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">NP3</div>
-                </div>
-            </div>
+        <div class="graficos-header fade-in">
+            <h1>📊 Gráficos de Desempenho</h1>
+            <p>Visualize seu desempenho acadêmico de forma detalhada</p>
         </div>
 
-        <div class="notas-lista" id="notasContainer">
-            <!-- Notas serão carregadas aqui -->
+        <div class="graficos-container">
+            <!-- Gráfico de Notas por Matéria -->
+            <div class="grafico-card fade-in">
+                <div class="grafico-header">
+                    <h2>📝 Notas por Matéria</h2>
+                    <span class="grafico-subtitle">Comparação do CR de cada disciplina</span>
+                </div>
+                <div class="grafico-content">
+                    <canvas id="graficoNotas"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico de Frequência -->
+            <div class="grafico-card fade-in">
+                <div class="grafico-header">
+                    <h2>✅ Frequência por Matéria</h2>
+                    <span class="grafico-subtitle">Percentual de presença em cada disciplina</span>
+                </div>
+                <div class="grafico-content">
+                    <canvas id="graficoFrequencia"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico de Distribuição de Notas -->
+            <div class="grafico-card fade-in">
+                <div class="grafico-header">
+                    <h2>📊 Distribuição de Notas</h2>
+                    <span class="grafico-subtitle">Classificação das suas notas</span>
+                </div>
+                <div class="grafico-content">
+                    <canvas id="graficoDistribuicao"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico de Evolução de Notas -->
+            <div class="grafico-card fade-in">
+                <div class="grafico-header">
+                    <h2>📈 Evolução das Avaliações</h2>
+                    <span class="grafico-subtitle">Desempenho ao longo do semestre</span>
+                </div>
+                <div class="grafico-content">
+                    <canvas id="graficoEvolucao"></canvas>
+                </div>
+            </div>
+
+            <!-- Resumo de Estatísticas -->
+            <div class="grafico-card estatisticas-card fade-in">
+                <div class="grafico-header">
+                    <h2>📈 Estatísticas Gerais</h2>
+                </div>
+                <div class="estatisticas-grid">
+                    <div class="estatistica-item">
+                        <span class="material-symbols-outlined">emoji_events</span>
+                        <div class="estatistica-info">
+                            <div class="estatistica-label">Maior Nota</div>
+                            <div class="estatistica-valor" id="maiorNota">-</div>
+                        </div>
+                    </div>
+                    <div class="estatistica-item">
+                        <span class="material-symbols-outlined">trending_down</span>
+                        <div class="estatistica-info">
+                            <div class="estatistica-label">Menor Nota</div>
+                            <div class="estatistica-valor" id="menorNota">-</div>
+                        </div>
+                    </div>
+                    <div class="estatistica-item">
+                        <span class="material-symbols-outlined">calculate</span>
+                        <div class="estatistica-info">
+                            <div class="estatistica-label">CR Médio</div>
+                            <div class="estatistica-valor" id="crMedio">-</div>
+                        </div>
+                    </div>
+                    <div class="estatistica-item">
+                        <span class="material-symbols-outlined">fact_check</span>
+                        <div class="estatistica-info">
+                            <div class="estatistica-label">Frequência Média</div>
+                            <div class="estatistica-valor" id="frequenciaMedia">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <script src="../assets/js/global.js"></script>
-    <script src="../assets/js/notas.js"></script>
+    <script src="../assets/js/graficos.js"></script>
 </body>
 </html>

@@ -94,8 +94,8 @@ function getCorFrequencia(status) {
 
 // Obter cor baseada na nota
 function getCorNota(nota) {
-    if (nota >= 8) return 'var(--cor-nota-alta)';
-    if (nota >= 6) return 'var(--cor-nota-media)';
+    if (nota >= 80) return 'var(--cor-nota-alta)';
+    if (nota >= 60) return 'var(--cor-nota-media)';
     return 'var(--cor-nota-baixa)';
 }
 

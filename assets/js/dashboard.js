@@ -68,7 +68,7 @@ async function carregarNotificacoes() {
     
     todasNotificacoes.forEach(notif => {
         const notifElement = document.createElement('div');
-        notifElement.className = `notificacao-item ${notif.lida ? 'lida' : ''}`;
+        notifElement.className = `notificacao-item ${notif.tipo} ${notif.lida ? 'lida' : ''}`;
         
         notifElement.innerHTML = `
             <div class="notificacao-icon">
@@ -79,6 +79,14 @@ async function carregarNotificacoes() {
                 <div class="notificacao-data">${notif.data}</div>
             </div>
         `;
+        
+        // Adicionar link se houver
+        if (notif.link) {
+            notifElement.style.cursor = 'pointer';
+            notifElement.addEventListener('click', () => {
+                window.location.href = notif.link;
+            });
+        }
         
         container.appendChild(notifElement);
     });

@@ -7,24 +7,24 @@
       {
         "tipo": "Prova 1",
         "data": "15/09/2025",
-        "nota": 9.5,
+        "nota": 95,
         "peso": 3
       },
       {
         "tipo": "Trabalho Prático",
         "data": "20/10/2025",
-        "nota": 10.0,
+        "nota": 100,
         "peso": 2
       },
       {
         "tipo": "Prova 2",
         "data": "15/11/2025",
-        "nota": 8.5,
+        "nota": 85,
         "peso": 3
       }
     ],
-    "media": 9.1,
-    "cr": 9.1,
+    "media": 91,
+    "cr": 91,
     "status": "Aprovado"
   },
   {
@@ -35,25 +35,25 @@
       {
         "tipo": "Prova 1",
         "data": "18/09/2025",
-        "nota": 6.0,
+        "nota": 60,
         "peso": 4
       },
       {
         "tipo": "Prova 2",
         "data": "18/11/2025",
-        "nota": 4.5,
+        "nota": 45,
         "peso": 4
       },
       {
         "tipo": "Trabalho",
         "data": "25/10/2025",
-        "nota": 7.0,
+        "nota": 70,
         "peso": 2
       }
     ],
-    "media": 5.6,
-    "cr": 5.6,
-    "status": "Recuperação"
+    "media": 56,
+    "cr": 56,
+    "status": "NP3"
   },
   {
     "materia_id": 3,
@@ -63,24 +63,24 @@
       {
         "tipo": "Prova 1",
         "data": "12/09/2025",
-        "nota": 7.5,
+        "nota": 75,
         "peso": 3
       },
       {
         "tipo": "Lista de Exercícios",
         "data": "10/10/2025",
-        "nota": 8.0,
+        "nota": 80,
         "peso": 2
       },
       {
         "tipo": "Prova 2",
         "data": "12/11/2025",
-        "nota": 6.5,
+        "nota": 65,
         "peso": 3
       }
     ],
-    "media": 7.2,
-    "cr": 7.2,
+    "media": 72,
+    "cr": 72,
     "status": "Aprovado"
   },
   {
@@ -91,24 +91,24 @@
       {
         "tipo": "Prova 1",
         "data": "16/09/2025",
-        "nota": 9.0,
+        "nota": 90,
         "peso": 3
       },
       {
         "tipo": "Projeto Prático",
         "data": "22/10/2025",
-        "nota": 10.0,
+        "nota": 100,
         "peso": 4
       },
       {
         "tipo": "Prova 2",
         "data": "16/11/2025",
-        "nota": 8.0,
+        "nota": 80,
         "peso": 3
       }
     ],
-    "media": 9.0,
-    "cr": 9.0,
+    "media": 90,
+    "cr": 90,
     "status": "Aprovado"
   },
   {
@@ -119,24 +119,24 @@
       {
         "tipo": "Prova 1",
         "data": "19/09/2025",
-        "nota": 5.5,
+        "nota": 55,
         "peso": 4
       },
       {
         "tipo": "Prova 2",
         "data": "19/11/2025",
-        "nota": 6.0,
+        "nota": 60,
         "peso": 4
       },
       {
         "tipo": "Relatórios",
         "data": "30/10/2025",
-        "nota": 7.5,
+        "nota": 75,
         "peso": 2
       }
     ],
-    "media": 6.1,
-    "cr": 6.1,
+    "media": 61,
+    "cr": 61,
     "status": "Aprovado"
   },
   {
@@ -147,24 +147,24 @@
       {
         "tipo": "Prova 1",
         "data": "17/09/2025",
-        "nota": 8.5,
+        "nota": 85,
         "peso": 3
       },
       {
         "tipo": "Projeto POO",
         "data": "24/10/2025",
-        "nota": 9.5,
+        "nota": 95,
         "peso": 4
       },
       {
         "tipo": "Prova 2",
         "data": "17/11/2025",
-        "nota": 7.5,
+        "nota": 75,
         "peso": 3
       }
     ],
-    "media": 8.5,
-    "cr": 8.5,
+    "media": 85,
+    "cr": 85,
     "status": "Aprovado"
   }
 ]

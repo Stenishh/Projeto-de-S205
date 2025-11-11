@@ -49,6 +49,19 @@
   border-left-color: var(--cor-texto-secundario);
 }
 
+.notificacao-item.vaga {
+  border-left-color: var(--cor-sucesso);
+  background: linear-gradient(135deg, var(--cor-fundo-hover) 0%, rgba(76, 175, 80, 0.05) 100%);
+}
+
+.notificacao-item.alerta {
+  border-left-color: var(--cor-alerta);
+}
+
+.notificacao-item.prova {
+  border-left-color: var(--cor-erro);
+}
+
 .notificacao-icon {
   flex-shrink: 0;
   width: 40px;

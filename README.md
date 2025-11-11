@@ -37,10 +37,37 @@ Portal acadêmico completo e moderno desenvolvido para gerenciar informações e
 
 ### 📝 Notas
 - Visualização de todas as avaliações
+- **Sistema de notas de 0 a 100** (padrão Inatel)
+- **Média de aprovação: 60 pontos**
+- **NP3 (recuperação)** para médias abaixo de 60
 - CR por matéria com código de cores
 - Tabela detalhada de provas, trabalhos e pesos
-- Status de aprovação (Aprovado/Recuperação/Reprovado)
+- Status de aprovação (Aprovado/NP3)
 - Média geral do semestre destacada
+
+### 📅 Calendário Acadêmico
+- **Calendário interativo mensal** com navegação entre meses
+- Visualização de todas as aulas do semestre
+- **Indicadores visuais** para dias com aulas
+- **Detalhes completos ao clicar no dia**:
+  - Horários de todas as aulas
+  - Professores e salas
+  - Tipo de aula (teórica/prática)
+  - Código da matéria
+- Destaque para o dia atual
+- Interface responsiva e intuitiva
+
+### 📊 Gráficos de Desempenho
+- **Gráfico de Notas por Matéria**: Visualização do CR de cada disciplina
+- **Gráfico de Frequência**: Comparação de presença entre matérias
+- **Gráfico de Distribuição**: Classificação de notas (Alta/Média/Baixa)
+- **Gráfico de Evolução**: Desempenho ao longo do semestre
+- **Estatísticas Gerais**:
+  - Maior e menor nota
+  - CR médio geral
+  - Frequência média
+- Gráficos interativos com Chart.js
+- Cores dinâmicas baseadas no tema escolhido
 
 ### 👤 Perfil
 - Informações pessoais e acadêmicas do aluno
@@ -56,6 +83,7 @@ Portal acadêmico completo e moderno desenvolvido para gerenciar informações e
 - **HTML5**: Estrutura semântica moderna
 - **CSS3**: Estilos com variáveis CSS, flexbox e grid
 - **JavaScript ES6+**: Código modular e assíncrono
+- **Chart.js**: Biblioteca para criação de gráficos interativos
 - **Material Symbols**: Ícones do Google
 - **JSON**: Armazenamento de dados estruturados
 
@@ -72,6 +100,8 @@ S205/
 │   │   ├── horarios.css         # Estilos da grade horária
 │   │   ├── frequencia.css       # Estilos de frequência
 │   │   ├── notas.css            # Estilos de notas
+│   │   ├── calendario.css       # Estilos do calendário
+│   │   ├── graficos.css         # Estilos dos gráficos
 │   │   └── perfil.css           # Estilos do perfil
 │   ├── js/
 │   │   ├── global.js            # Funções globais e utilitárias
@@ -80,6 +110,8 @@ S205/
 │   │   ├── horarios.js          # Lógica de horários
 │   │   ├── frequencia.js        # Lógica de frequência
 │   │   ├── notas.js             # Lógica de notas
+│   │   ├── calendario.js        # Lógica do calendário
+│   │   ├── graficos.js          # Lógica dos gráficos
 │   │   └── perfil.js            # Lógica do perfil
 │   └── data/
 │       ├── aluno.json           # Dados do aluno
@@ -94,6 +126,8 @@ S205/
     ├── horarios.html            # Página de horários
     ├── frequencia.html          # Página de frequência
     ├── notas.html               # Página de notas
+    ├── calendario.html          # Página de calendário
+    ├── graficos.html            # Página de gráficos
     └── perfil.html              # Página de perfil
 ```
 
@@ -174,8 +208,8 @@ O portal vem com dados de exemplo completos:
 
 - [ ] Integração com backend real
 - [ ] Sistema de login
-- [ ] Calendário acadêmico interativo
-- [ ] Gráficos de desempenho
+- [x] Calendário acadêmico interativo
+- [x] Gráficos de desempenho
 - [ ] Histórico de notas por período
 - [ ] Download de documentos
 - [ ] Sistema de mensagens
