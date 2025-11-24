@@ -4,7 +4,7 @@
     "dia_cod": "seg",
     "aulas": [
       {
-        "horario": "08:00 - 09:40",
+        "horario": "8:00 - 9:40",
         "materia_id": 4,
         "materia": "Estruturas de Dados",
         "codigo": "C301",
@@ -20,11 +20,27 @@
         "tipo": "Teórica"
       },
       {
-        "horario": "14:00 - 15:40",
+        "horario": "13:30 - 15:10",
         "materia_id": 5,
         "materia": "Física II",
         "codigo": "F102",
         "sala": "P1-S08",
+        "tipo": "Teórica"
+      },
+      {
+        "horario": "15:30 - 17:10",
+        "materia_id": 3,
+        "materia": "Álgebra e Geometria",
+        "codigo": "M202",
+        "sala": "P1-S12",
+        "tipo": "Teórica"
+      },
+      {
+        "horario": "19:30 - 21:10",
+        "materia_id": 1,
+        "materia": "Interface Homem-máquina",
+        "codigo": "S205",
+        "sala": "P1-S17",
         "tipo": "Teórica"
       }
     ]
@@ -34,7 +50,7 @@
     "dia_cod": "ter",
     "aulas": [
       {
-        "horario": "08:00 - 09:40",
+        "horario": "8:00 - 9:40",
         "materia_id": 1,
         "materia": "Interface Homem-máquina",
         "codigo": "S205",
@@ -50,12 +66,28 @@
         "tipo": "Teórica"
       },
       {
-        "horario": "14:00 - 15:40",
+        "horario": "13:30 - 15:10",
         "materia_id": 6,
         "materia": "Programação Orientada a Objetos",
         "codigo": "P201",
         "sala": "P2-L05",
         "tipo": "Prática"
+      },
+      {
+        "horario": "17:30 - 19:10",
+        "materia_id": 4,
+        "materia": "Estruturas de Dados",
+        "codigo": "C301",
+        "sala": "P2-L01",
+        "tipo": "Prática"
+      },
+      {
+        "horario": "21:30 - 23:10",
+        "materia_id": 2,
+        "materia": "Circuitos Elétricos",
+        "codigo": "E201",
+        "sala": "P1-S15",
+        "tipo": "Teórica"
       }
     ]
   },
@@ -64,7 +96,7 @@
     "dia_cod": "qua",
     "aulas": [
       {
-        "horario": "08:00 - 09:40",
+        "horario": "8:00 - 9:40",
         "materia_id": 2,
         "materia": "Circuitos Elétricos",
         "codigo": "E201",
@@ -80,12 +112,20 @@
         "tipo": "Teórica"
       },
       {
-        "horario": "14:00 - 15:40",
+        "horario": "15:30 - 17:10",
         "materia_id": 1,
         "materia": "Interface Homem-máquina",
         "codigo": "S205",
         "sala": "P2-L08",
         "tipo": "Prática"
+      },
+      {
+        "horario": "19:30 - 21:10",
+        "materia_id": 5,
+        "materia": "Física II",
+        "codigo": "F102",
+        "sala": "P1-S08",
+        "tipo": "Teórica"
       }
     ]
   },
@@ -94,7 +134,7 @@
     "dia_cod": "qui",
     "aulas": [
       {
-        "horario": "08:00 - 09:40",
+        "horario": "8:00 - 9:40",
         "materia_id": 3,
         "materia": "Álgebra e Geometria",
         "codigo": "M202",
@@ -110,12 +150,28 @@
         "tipo": "Prática"
       },
       {
-        "horario": "14:00 - 15:40",
+        "horario": "13:30 - 15:10",
         "materia_id": 6,
         "materia": "Programação Orientada a Objetos",
         "codigo": "P201",
         "sala": "P1-S20",
         "tipo": "Teórica"
+      },
+      {
+        "horario": "17:30 - 19:10",
+        "materia_id": 2,
+        "materia": "Circuitos Elétricos",
+        "codigo": "E201",
+        "sala": "P1-S15",
+        "tipo": "Teórica"
+      },
+      {
+        "horario": "21:30 - 23:10",
+        "materia_id": 4,
+        "materia": "Estruturas de Dados",
+        "codigo": "C301",
+        "sala": "P2-L01",
+        "tipo": "Prática"
       }
     ]
   },
@@ -124,7 +180,7 @@
     "dia_cod": "sex",
     "aulas": [
       {
-        "horario": "08:00 - 09:40",
+        "horario": "8:00 - 9:40",
         "materia_id": 5,
         "materia": "Física II",
         "codigo": "F102",
@@ -138,6 +194,22 @@
         "codigo": "P201",
         "sala": "P2-L05",
         "tipo": "Prática"
+      },
+      {
+        "horario": "13:30 - 15:10",
+        "materia_id": 1,
+        "materia": "Interface Homem-máquina",
+        "codigo": "S205",
+        "sala": "P2-L08",
+        "tipo": "Prática"
+      },
+      {
+        "horario": "15:30 - 17:10",
+        "materia_id": 3,
+        "materia": "Álgebra e Geometria",
+        "codigo": "M202",
+        "sala": "P1-S12",
+        "tipo": "Teórica"
       }
     ]
   }

@@ -4,8 +4,11 @@ let alunoData = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     alunoData = await carregarJSON('../assets/data/aluno.json');
+    const notasData = await carregarJSON('../assets/data/notas.json');
+    const frequenciaData = await carregarJSON('../assets/data/frequencia.json');
+    
     exibirPerfil();
-    configurarTemas();
+    calcularEstatisticas(notasData, frequenciaData);
 });
 
 function exibirPerfil() {
@@ -23,25 +26,22 @@ function exibirPerfil() {
     document.getElementById('infoTelefone').textContent = alunoData.telefone;
 }
 
-function configurarTemas() {
-    const temaAtual = localStorage.getItem('theme') || 'inatel';
+function calcularEstatisticas(notasData, frequenciaData) {
+    if (!notasData || !frequenciaData) return;
     
-    document.querySelectorAll('.tema-option').forEach(option => {
-        const tema = option.getAttribute('data-theme');
-        if (tema === temaAtual) {
-            option.classList.add('ativo');
-        }
-        
-        option.addEventListener('click', () => {
-            document.querySelectorAll('.tema-option').forEach(opt => opt.classList.remove('ativo'));
-            option.classList.add('ativo');
-            
-            document.documentElement.setAttribute('data-theme', tema);
-            localStorage.setItem('theme', tema);
-            
-            mostrarToast(`Tema ${tema === 'inatel' ? 'Inatel' : tema === 'limao' ? 'Limão' : 'Dark'} aplicado!`);
-        });
-    });
+    // Calcular CR Geral
+    const totalNotas = notasData.reduce((acc, materia) => acc + materia.media_final, 0);
+    const crGeral = (totalNotas / notasData.length).toFixed(1);
+    document.getElementById('crGeral').textContent = crGeral;
+    
+    // Total de Matérias
+    document.getElementById('totalMaterias').textContent = notasData.length;
+    
+    // Frequência Média
+    const totalPresencas = frequenciaData.reduce((acc, f) => acc + f.presencas, 0);
+    const totalAulas = frequenciaData.reduce((acc, f) => acc + f.aulas_dadas, 0);
+    const frequenciaMedia = totalAulas > 0 ? ((totalPresencas / totalAulas) * 100).toFixed(1) : 0;
+    document.getElementById('frequenciaMedia').textContent = `${frequenciaMedia}%`;
 }
 
 console.log('✅ Perfil.js carregado!');

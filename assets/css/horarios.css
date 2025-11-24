@@ -1,155 +1,225 @@
 /* ========== HORÁRIOS ESPECÍFICO ========== */
 
 .horarios-container {
-  background-color: var(--cor-fundo-card);
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 2px 8px var(--cor-sombra);
   overflow-x: auto;
 }
 
-.horarios-tabela {
-  width: 100%;
-  min-width: 800px;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-.horarios-tabela thead tr {
-  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
-  color: white;
-}
-
-.horarios-tabela th {
-  padding: 15px 10px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.horarios-tabela th:first-child {
-  border-top-left-radius: 8px;
-}
-
-.horarios-tabela th:last-child {
-  border-top-right-radius: 8px;
-}
-
-.horarios-tabela tbody tr {
-  transition: background-color 0.3s ease;
-}
-
-.horarios-tabela tbody tr:hover {
-  background-color: var(--cor-fundo-hover);
-}
-
-.horarios-tabela td {
-  padding: 15px 10px;
-  border-bottom: 1px solid var(--cor-borda);
-  vertical-align: top;
-}
-
-.horario-coluna {
-  font-weight: 700;
-  color: var(--cor-primaria);
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.aula-info {
-  padding: 12px;
-  background-color: var(--cor-fundo-hover);
-  border-left: 4px solid var(--cor-primaria);
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  min-height: 80px;
-}
-
-.aula-info:hover {
-  background-color: var(--cor-borda);
-  transform: translateX(3px);
+/* Grade de Horários em formato Calendário */
+.horarios-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  gap: 0;
+  min-width: 900px;
+  background-color: var(--cor-fundo-card);
+  border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 2px 8px var(--cor-sombra);
 }
 
-.aula-nome-tabela {
+/* Cabeçalho dos dias */
+.horarios-header {
+  display: contents;
+}
+
+.header-cell {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+  color: white;
+  padding: 20px 15px;
+  text-align: center;
   font-weight: 700;
-  color: var(--cor-texto);
-  font-size: 0.95rem;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.aula-codigo-tabela {
+.header-cell:first-child {
+  background: var(--cor-primaria-escura);
+}
+
+/* Linha de horário */
+.horario-row {
+  display: contents;
+}
+
+.horario-label {
+  background-color: var(--cor-fundo-hover);
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 700;
   color: var(--cor-primaria);
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.aula-detalhes-tabela {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-size: 0.8rem;
-  color: var(--cor-texto-secundario);
-}
-
-.aula-detalhes-tabela span {
+  font-size: 0.85rem;
+  border-right: 2px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
   display: flex;
   align-items: center;
-  gap: 3px;
+  justify-content: center;
 }
 
-.celula-vazia {
+.aula-slot {
+  padding: 12px;
+  border-right: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+  background-color: var(--cor-fundo-card);
+  transition: background-color 0.3s ease;
+  min-height: 120px;
+}
+
+.aula-slot:hover {
+  background-color: var(--cor-fundo-hover);
+}
+
+.aula-slot.vazio {
   background-color: var(--cor-fundo);
-  text-align: center;
-  color: var(--cor-texto-secundario);
-  font-style: italic;
 }
 
+/* Card da aula */
+.aula-card {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+  border-radius: 8px;
+  padding: 12px;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.aula-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.aula-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.aula-card.pratica {
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+}
+
+.aula-card.teorica {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+}
+
+.aula-materia {
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.aula-codigo {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.aula-detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.aula-detalhe-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.aula-detalhe-item .material-symbols-outlined {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Legenda */
 .legenda {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   margin-top: 25px;
   padding: 20px;
   background-color: var(--cor-fundo-hover);
   border-radius: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 .legenda-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  font-size: 0.9rem;
 }
 
 .legenda-cor {
-  width: 30px;
-  height: 15px;
-  border-radius: 3px;
+  width: 35px;
+  height: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .legenda-cor.teorica {
-  background-color: var(--cor-primaria);
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
 }
 
 .legenda-cor.pratica {
-  background-color: var(--cor-secundaria);
+  background: linear-gradient(135deg, #4CAF50, #388E3C);
 }
 
-@media (max-width: 768px) {
-  .horarios-container {
-    padding: 15px;
+/* Responsivo */
+@media (max-width: 1024px) {
+  .horarios-grid {
+    grid-template-columns: 80px repeat(5, 1fr);
+    min-width: 800px;
   }
   
-  .horarios-tabela {
+  .aula-materia {
     font-size: 0.85rem;
   }
   
-  .horarios-tabela th,
-  .horarios-tabela td {
-    padding: 10px 5px;
+  .aula-codigo,
+  .aula-detalhes {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .horarios-grid {
+    grid-template-columns: 70px repeat(5, 1fr);
+    min-width: 700px;
+  }
+  
+  .header-cell {
+    font-size: 0.85rem;
+    padding: 15px 10px;
+  }
+  
+  .aula-card {
+    padding: 8px;
+  }
+  
+  .aula-materia {
+    font-size: 0.8rem;
+  }
+  
+  .legenda {
+    gap: 15px;
+    padding: 15px;
   }
 }

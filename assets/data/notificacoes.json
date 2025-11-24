@@ -2,7 +2,7 @@
   {
     "id": 1,
     "tipo": "vaga",
-    "icone": "work",
+    "icone": "business_center",
     "mensagem": "🔥 Nova vaga de Desenvolvimento Mobile com 88% de match!",
     "data": "10/11/2025",
     "lida": false,
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "tipo": "vaga",
-    "icone": "work",
+    "icone": "business_center",
     "mensagem": "✨ Vaga em destaque: Estágio Full Stack - 95% de compatibilidade",
     "data": "10/11/2025",
     "lida": false,
@@ -28,7 +28,7 @@
   {
     "id": 4,
     "tipo": "alerta",
-    "icone": "mail",
+    "icone": "payments",
     "mensagem": "Você possui uma pendência no financeiro...",
     "data": "09/11/2025",
     "lida": false
@@ -36,7 +36,7 @@
   {
     "id": 5,
     "tipo": "prova",
-    "icone": "school",
+    "icone": "menu_book",
     "mensagem": "Prova de Física II amanhã às 08:00 na sala P1-S08",
     "data": "10/11/2025",
     "lida": false
