@@ -153,16 +153,102 @@
   .graficos-header h1 {
     font-size: 1.5rem;
   }
+
+  .graficos-header p {
+    font-size: 0.95rem;
+  }
   
   .grafico-content {
     height: 300px;
   }
   
   .estatisticas-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .estatistica-valor {
     font-size: 1.5rem;
+  }
+
+  .grafico-card {
+    padding: 18px;
+  }
+
+  .grafico-card:hover {
+    transform: none;
+  }
+
+  .grafico-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .estatistica-item {
+    padding: 15px;
+  }
+
+  .estatistica-item:hover {
+    transform: none;
+  }
+
+  .estatistica-item .material-symbols-outlined {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .graficos-header {
+    margin-bottom: 25px;
+  }
+
+  .graficos-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .graficos-header p {
+    font-size: 0.85rem;
+  }
+
+  .graficos-container {
+    gap: 15px;
+  }
+
+  .grafico-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .grafico-content {
+    height: 250px;
+  }
+
+  .grafico-header {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+
+  .grafico-header h2 {
+    font-size: 1rem;
+  }
+
+  .grafico-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .estatisticas-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .estatistica-item {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .estatistica-valor {
+    font-size: 1.3rem;
+  }
+
+  .estatistica-label {
+    font-size: 0.8rem;
   }
 }

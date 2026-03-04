@@ -10,6 +10,26 @@
   box-shadow: 0 4px 12px var(--cor-sombra);
 }
 
+.welcome-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.welcome-text {
+  flex: 1;
+}
+
 .welcome-section h1 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -200,6 +220,7 @@
   overflow: hidden;
   border-radius: 12px;
   background-color: var(--cor-fundo-card);
+  touch-action: pan-y;
 }
 
 .carousel {
@@ -335,8 +356,21 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .welcome-section {
+    padding: 20px;
+  }
+
+  .welcome-foto {
+    width: 60px;
+    height: 60px;
+  }
+
   .welcome-section h1 {
     font-size: 1.5rem;
+  }
+
+  .welcome-section p {
+    font-size: 0.95rem;
   }
 
   .aula-header-info {
@@ -357,5 +391,490 @@
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 18px 12px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .notificacao-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .notificacao-item:hover {
+    transform: none;
+  }
+
+  .aula-card:hover {
+    transform: none;
+  }
+
+  .aula-detalhes {
+    gap: 10px;
+  }
+
+  .carousel-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-detalhes {
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-section {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .welcome-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .welcome-foto {
+    width: 55px;
+    height: 55px;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.2rem;
+  }
+
+  .welcome-section p {
+    font-size: 0.85rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .stat-card {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .stat-value {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+
+  .notificacao-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .notificacao-mensagem {
+    font-size: 0.85rem;
+  }
+
+  .notificacao-data {
+    font-size: 0.75rem;
+  }
+
+  .aula-nome {
+    font-size: 1rem;
+  }
+
+  .aula-detalhes {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+  }
+
+  .labels-aula {
+    gap: 6px;
+  }
+
+  .label-prova {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  .carousel-card img {
+    height: 150px;
+  }
+
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .carousel-btn.prev {
+    left: 8px;
+  }
+
+  .carousel-btn.next {
+    right: 8px;
+  }
+
+  .carousel-info {
+    padding: 12px;
+  }
+
+  .carousel-info h3 {
+    font-size: 1rem;
+  }
+
+  .carousel-info p {
+    font-size: 0.85rem;
+  }
+
+  .carousel-indicators {
+    padding: 10px 0;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .indicator.active {
+    width: 24px;
+  }
+}
+
+/* ========== CARTEIRINHA ESCOLAR ========== */
+.carteirinha-btn-container {
+  margin-bottom: 20px;
+}
+
+.btn-carteirinha {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(18, 106, 226, 0.3);
+  font-family: inherit;
+}
+
+.btn-carteirinha:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(18, 106, 226, 0.4);
+}
+
+.btn-carteirinha:active {
+  transform: translateY(-1px);
+}
+
+.btn-carteirinha .material-symbols-outlined {
+  font-size: 24px;
+  color: white;
+}
+
+/* Modal Carteirinha */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.carteirinha-modal {
+  position: relative;
+  max-width: 680px;
+  width: 100%;
+}
+
+.carteirinha-fechar {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carteirinha-fechar:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(90deg);
+}
+
+.carteirinha-fechar .material-symbols-outlined {
+  color: white;
+  font-size: 22px;
+}
+
+/* Card da Carteirinha - Réplica fiel */
+.carteirinha-card {
+  background: #f5f0e8;
+  border-radius: 14px;
+  overflow: visible;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+.carteirinha-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 24px 12px;
+  border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.carteirinha-header-left {
+  flex-shrink: 0;
+}
+
+.carteirinha-logo {
+  width: 100px;
+  height: auto;
+}
+
+.carteirinha-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.carteirinha-subtitulo {
+  font-size: 0.7rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.carteirinha-titulo {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #003366;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.carteirinha-expedida {
+  font-size: 0.62rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Corpo */
+.carteirinha-corpo {
+  display: flex;
+  gap: 20px;
+  padding: 18px 24px;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.carteirinha-foto-container {
+  flex-shrink: 0;
+}
+
+.carteirinha-foto {
+  width: 120px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #003366;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carteirinha-dados {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.carteirinha-field {
+  border: 1.5px solid #003366;
+  border-radius: 8px;
+  padding: 5px 12px 6px;
+  position: relative;
+}
+
+.carteirinha-field-label {
+  font-size: 0.62rem;
+  color: #003366;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  top: -1px;
+}
+
+.carteirinha-field-value {
+  display: block;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.carteirinha-field-row {
+  display: flex;
+  gap: 10px;
+}
+
+.carteirinha-field-rg {
+  flex: 2.2;
+}
+
+.carteirinha-field-matricula {
+  flex: 1;
+}
+
+.carteirinha-field-nascimento {
+  flex: 1;
+}
+
+.carteirinha-field-validade {
+  flex: 1;
+}
+
+/* Rodapé */
+.carteirinha-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px 14px;
+  border-top: 1px solid rgba(0, 51, 102, 0.15);
+  gap: 10px;
+}
+
+.carteirinha-rodape-instituicao {
+  font-size: 0.6rem;
+  color: #555;
+  font-weight: 400;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.carteirinha-rodape-valida {
+  font-size: 0.58rem;
+  color: #888;
+  font-style: italic;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.carteirinha-rodape-site {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: #003366;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Responsivo Carteirinha */
+@media (max-width: 480px) {
+  .btn-carteirinha {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  .carteirinha-modal {
+    max-width: 100%;
+  }
+
+  .carteirinha-fechar {
+    top: -42px;
+  }
+
+  .carteirinha-header {
+    padding: 14px 16px 10px;
+    gap: 10px;
+  }
+
+  .carteirinha-logo {
+    width: 70px;
+  }
+
+  .carteirinha-titulo {
+    font-size: 0.72rem;
+  }
+
+  .carteirinha-subtitulo {
+    font-size: 0.6rem;
+  }
+
+  .carteirinha-expedida {
+    font-size: 0.55rem;
+  }
+
+  .carteirinha-corpo {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .carteirinha-foto {
+    width: 100px;
+    height: 125px;
+  }
+
+  .carteirinha-dados {
+    width: 100%;
+  }
+
+  .carteirinha-field-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .carteirinha-rodape {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    padding: 8px 14px 10px;
   }
 }

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function exibirPerfil() {
     if (!alunoData) return;
     
-    document.getElementById('perfilFoto').src = alunoData.foto;
+    document.getElementById('perfilFoto').src = '../' + alunoData.foto;
     document.getElementById('perfilNome').textContent = `${alunoData.nome} ${alunoData.sobrenome}`;
     document.getElementById('perfilCurso').textContent = alunoData.curso;
     document.getElementById('perfilPeriodo').textContent = alunoData.periodo;

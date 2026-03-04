@@ -190,4 +190,98 @@
   .avaliacoes-tabela td {
     padding: 10px 8px;
   }
+
+  .media-geral-destaque {
+    padding: 20px;
+  }
+
+  .media-geral-destaque h2 {
+    font-size: 1.3rem;
+  }
+
+  .media-geral-valor {
+    font-size: 3rem;
+  }
+
+  .nota-card {
+    padding: 18px;
+  }
+
+  .nota-card:hover {
+    transform: none;
+  }
+
+  .nota-materia-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-geral-destaque {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .media-geral-destaque h2 {
+    font-size: 1.1rem;
+  }
+
+  .media-geral-valor {
+    font-size: 2.5rem;
+  }
+
+  .media-geral-destaque > div {
+    gap: 20px !important;
+  }
+
+  .media-geral-destaque > div > div > div:first-child {
+    font-size: 1.5rem !important;
+  }
+
+  .nota-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .nota-materia-info h3 {
+    font-size: 1rem;
+  }
+
+  .cr-display {
+    padding: 12px 20px;
+    border-radius: 10px;
+  }
+
+  .cr-valor {
+    font-size: 2rem;
+  }
+
+  .avaliacoes-tabela {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.8rem;
+  }
+
+  .avaliacoes-tabela th,
+  .avaliacoes-tabela td {
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
+
+  .nota-valor {
+    font-size: 0.95rem;
+    padding: 4px 8px;
+    min-width: 40px;
+  }
+
+  .status-aprovacao {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .notas-lista {
+    gap: 15px;
+  }
 }

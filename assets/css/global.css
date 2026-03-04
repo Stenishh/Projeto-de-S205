@@ -62,6 +62,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -70,6 +71,17 @@ body {
   color: var(--cor-texto);
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+input, select, textarea, button {
+  font-size: 16px; /* Prevents iOS zoom on focus */
 }
 
 /* ========== HEADER ========== */
@@ -118,6 +130,20 @@ header {
 
 .perfil-icon:hover {
   transform: scale(1.1);
+}
+
+.perfil-icon-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cor-primaria);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil-icon-img:hover {
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 8px rgba(18, 106, 226, 0.4);
 }
 
 /* ========== NAVEGAÇÃO LATERAL ========== */
@@ -360,11 +386,79 @@ main {
 
   .card {
     padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
   }
 
   .sidebar {
-    width: 80%;
+    width: 85%;
     max-width: 300px;
+  }
+
+  .menu-icon,
+  .perfil-icon {
+    padding: 8px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.75rem 0;
+  }
+
+  .header-container {
+    padding: 0 10px;
+  }
+
+  .logo svg {
+    width: 80px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .sidebar {
+    width: 90%;
+  }
+
+  .sidebar-menu a {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+
+  .theme-btn {
+    padding: 12px 15px;
   }
 }
 

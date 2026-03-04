@@ -317,4 +317,60 @@ async function carregarEstatisticas() {
     }
 }
 
+// ========== CARTEIRINHA ESCOLAR ==========
+function initCarteirinha() {
+    const btnCarteirinha = document.getElementById('btnCarteirinha');
+    const modalCarteirinha = document.getElementById('modalCarteirinha');
+    const fecharCarteirinha = document.getElementById('fecharCarteirinha');
+
+    if (btnCarteirinha) {
+        btnCarteirinha.addEventListener('click', abrirCarteirinha);
+    }
+
+    if (fecharCarteirinha) {
+        fecharCarteirinha.addEventListener('click', fecharModalCarteirinha);
+    }
+
+    if (modalCarteirinha) {
+        modalCarteirinha.addEventListener('click', (e) => {
+            if (e.target === modalCarteirinha) {
+                fecharModalCarteirinha();
+            }
+        });
+    }
+}
+
+async function abrirCarteirinha() {
+    const modal = document.getElementById('modalCarteirinha');
+    if (!modal) return;
+
+    const aluno = await carregarJSON('assets/data/aluno.json');
+    if (aluno) {
+        const el = (id) => document.getElementById(id);
+
+        const nomeCompleto = `${aluno.nome} ${aluno.sobrenome}`;
+        if (el('carteirinhaNome')) el('carteirinhaNome').textContent = nomeCompleto;
+        if (el('carteirinhaMatricula')) el('carteirinhaMatricula').textContent = aluno.matricula;
+        if (el('carteirinhaCurso')) el('carteirinhaCurso').textContent = aluno.curso;
+        if (el('carteirinhaRG')) el('carteirinhaRG').textContent = aluno.rg || '-';
+        if (el('carteirinhaNascimento')) el('carteirinhaNascimento').textContent = aluno.data_nascimento || '-';
+        if (el('carteirinhaValidade')) el('carteirinhaValidade').textContent = aluno.validade_carteirinha || '-';
+        if (el('carteirinhaFoto')) el('carteirinhaFoto').src = aluno.foto;
+    }
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function fecharModalCarteirinha() {
+    const modal = document.getElementById('modalCarteirinha');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+// Inicializar carteirinha quando DOM estiver pronto
+document.addEventListener('DOMContentLoaded', initCarteirinha);
+
 console.log('✅ Dashboard.js carregado com sucesso!');

@@ -44,4 +44,24 @@
     text-overflow: ellipsis;
   }
 
-  
+  @media (max-width: 480px) {
+    .titulo_aula {
+      font-size: 13px;
+    }
+
+    .lables {
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .lable-prova,
+    .lable-frequencia,
+    .lable-nota {
+      padding: 5px 10px;
+      margin-right: 5px;
+    }
+
+    .p_lable {
+      font-size: 11px;
+    }
+  }

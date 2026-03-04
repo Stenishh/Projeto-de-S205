@@ -185,4 +185,104 @@
   .frequencia-detalhes {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 18px 12px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .frequencia-card {
+    padding: 18px;
+  }
+
+  .frequencia-card:hover {
+    transform: none;
+  }
+
+  .frequencia-materia-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .progress-bar-container {
+    height: 25px;
+  }
+
+  .progress-bar {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .stat-value {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  .stat-label {
+    margin-top: 0;
+    font-size: 0.8rem;
+  }
+
+  .frequencia-card {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .frequencia-materia-info h3 {
+    font-size: 1rem;
+  }
+
+  .frequencia-status-badge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .frequencia-detalhes {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .detalhe-item {
+    padding: 12px;
+  }
+
+  .detalhe-valor {
+    font-size: 1.5rem;
+  }
+
+  .detalhe-label {
+    font-size: 0.75rem;
+  }
+
+  .progress-bar-container {
+    height: 22px;
+  }
+
+  .alerta-faltas {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
 }

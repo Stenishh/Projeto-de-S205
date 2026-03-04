@@ -224,4 +224,95 @@
   .resumo-stats {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .resumo-geral {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .resumo-geral h2 {
+    font-size: 1.4rem;
+  }
+
+  .resumo-stat-valor {
+    font-size: 2rem;
+  }
+
+  .materia-card {
+    padding: 18px;
+  }
+
+  .materia-card:hover {
+    transform: none;
+  }
+
+  .materia-nome {
+    font-size: 1.1rem;
+  }
+
+  .materia-info {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .materias-grid {
+    gap: 12px;
+  }
+
+  .resumo-geral {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .resumo-geral h2 {
+    font-size: 1.2rem;
+  }
+
+  .resumo-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .resumo-stat-valor {
+    font-size: 1.8rem;
+  }
+
+  .materia-card {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .materia-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .materia-nome {
+    font-size: 1rem;
+    margin: 10px 0 8px 0;
+  }
+
+  .materia-stat-valor {
+    font-size: 1.4rem;
+  }
+
+  .materia-stat-label {
+    font-size: 0.7rem;
+  }
+
+  .materia-info {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .filtros-container {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .filtro-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
 }
