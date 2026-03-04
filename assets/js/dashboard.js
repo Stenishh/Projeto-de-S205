@@ -340,10 +340,6 @@ function initCarteirinha() {
     }
 }
 
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
 async function abrirCarteirinha() {
     const modal = document.getElementById('modalCarteirinha');
     if (!modal) return;
@@ -364,55 +360,15 @@ async function abrirCarteirinha() {
 
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-
-    // No mobile: fullscreen + forçar landscape
-    if (isMobile()) {
-        modal.classList.add('carteirinha-fullscreen');
-        try {
-            await modal.requestFullscreen();
-            if (screen.orientation && screen.orientation.lock) {
-                await screen.orientation.lock('landscape').catch(() => {});
-            }
-        } catch (e) {
-            // Fallback: apenas adiciona a classe fullscreen
-        }
-    }
 }
 
-async function fecharModalCarteirinha() {
+function fecharModalCarteirinha() {
     const modal = document.getElementById('modalCarteirinha');
     if (modal) {
         modal.style.display = 'none';
-        modal.classList.remove('carteirinha-fullscreen');
         document.body.style.overflow = '';
-
-        // Sair do fullscreen
-        if (document.fullscreenElement) {
-            try {
-                await document.exitFullscreen();
-            } catch (e) {}
-        }
-        // Desbloquear orientação
-        if (screen.orientation && screen.orientation.unlock) {
-            screen.orientation.unlock();
-        }
     }
 }
-
-// Fechar carteirinha se sair do fullscreen pelo botão do sistema
-document.addEventListener('fullscreenchange', () => {
-    if (!document.fullscreenElement) {
-        const modal = document.getElementById('modalCarteirinha');
-        if (modal && modal.classList.contains('carteirinha-fullscreen')) {
-            modal.style.display = 'none';
-            modal.classList.remove('carteirinha-fullscreen');
-            document.body.style.overflow = '';
-            if (screen.orientation && screen.orientation.unlock) {
-                screen.orientation.unlock();
-            }
-        }
-    }
-});
 
 // Inicializar carteirinha quando DOM estiver pronto
 document.addEventListener('DOMContentLoaded', initCarteirinha);
