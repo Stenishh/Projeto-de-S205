@@ -813,125 +813,68 @@
 }
 
 /* Responsivo Carteirinha */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .btn-carteirinha {
     width: 100%;
     justify-content: center;
     padding: 14px 20px;
     font-size: 1rem;
   }
-}
 
-/* Mobile portrait: carteirinha rotacionada para landscape */
-@media (max-width: 768px) and (orientation: portrait) {
-  .modal-overlay#modalCarteirinha {
-    padding: 0;
-    background: #111;
+  .carteirinha-modal {
+    max-width: 100%;
   }
 
-  .modal-overlay#modalCarteirinha .carteirinha-modal {
-    max-width: none;
-    width: 100vh;
-    height: 100vw;
-    transform: rotate(90deg);
-    transform-origin: center center;
-    display: flex;
+  .carteirinha-fechar {
+    top: -42px;
+  }
+
+  .carteirinha-header {
+    padding: 12px 14px 8px;
+    gap: 10px;
+  }
+
+  .carteirinha-logo {
+    width: 70px;
+  }
+
+  .carteirinha-titulo {
+    font-size: 0.72rem;
+  }
+
+  .carteirinha-subtitulo {
+    font-size: 0.6rem;
+  }
+
+  .carteirinha-expedida {
+    font-size: 0.55rem;
+  }
+
+  .carteirinha-corpo {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50vw;
-    margin-left: -50vh;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-card {
-    width: 92%;
-    max-width: none;
-    border-radius: 12px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-fechar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    width: 36px;
-    height: 36px;
-    z-index: 9999;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-header {
-    padding: 12px 16px 8px;
-    gap: 12px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-logo {
-    width: 80px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-corpo {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 12px 16px;
+    padding: 16px;
     gap: 14px;
   }
 
-  .modal-overlay#modalCarteirinha .carteirinha-foto {
-    width: 95px;
-    height: 120px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-field-row {
-    flex-direction: row;
-    gap: 8px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-field-value {
-    font-size: 0.82rem;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-rodape {
-    flex-direction: row;
-    gap: 8px;
-    padding: 6px 16px 10px;
-  }
-}
-
-/* Mobile landscape: carteirinha normal, sem rotação */
-@media (max-width: 900px) and (orientation: landscape) {
-  .modal-overlay#modalCarteirinha {
-    padding: 10px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-modal {
-    max-width: 95%;
-    width: 95%;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-fechar {
-    top: -38px;
-    right: 5px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-corpo {
-    flex-direction: row;
-    padding: 12px 18px;
-    gap: 16px;
-  }
-
-  .modal-overlay#modalCarteirinha .carteirinha-foto {
+  .carteirinha-foto {
     width: 100px;
     height: 125px;
   }
 
-  .modal-overlay#modalCarteirinha .carteirinha-field-row {
-    flex-direction: row;
-    gap: 8px;
+  .carteirinha-dados {
+    width: 100%;
   }
 
-  .modal-overlay#modalCarteirinha .carteirinha-rodape {
-    flex-direction: row;
-    gap: 8px;
+  .carteirinha-field-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .carteirinha-rodape {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    padding: 8px 14px 10px;
   }
 }
